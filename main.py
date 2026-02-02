@@ -24,12 +24,14 @@ def main():
     # Game Loop
     while True:
         log_state()
+         #Check if user has closed the window. Exit the game loop if they do.
         for event in pygame.event.get():
-            #Check if user has closed the window. Exit the game loop if they do.
             if event.type == pygame.QUIT:
                 return
-        screen.fill("black")
         
+        screen.fill("black")
+        player.update(dt)
+
         #Re-render player
         player.draw(screen)
 
